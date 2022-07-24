@@ -76,7 +76,7 @@ const Login = () => {
   }
 
   return (
-    <div className='h-screen w-screen flex flex-col sm:flex-row'>
+    <div className='h-[91.8vh] flex flex-col sm:flex-row'>
       <div className='flex-1 hidden sm:block bg-blue-500'>
 
       </div>
