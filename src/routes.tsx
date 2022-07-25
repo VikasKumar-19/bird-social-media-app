@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthWrapper from "./AuthWrapper";
+import FeedWrapper from "./FeedWrapper";
 import Layout from "./layout";
 import Navbar from "./layout/navbar";
 import Dashboard from "./pages/dashboard";
@@ -13,25 +14,27 @@ import PrivateRoute from "./privateRoute";
 const Routings = () => {
   return (
     <AuthWrapper>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/dashboard"
-              element={
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/vikas" element={<VikasTest />} />
-            {/* <Route path="/layout" element={<Layout />} /> */}
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <FeedWrapper>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/vikas" element={<VikasTest />} />
+              {/* <Route path="/layout" element={<Layout />} /> */}
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </FeedWrapper>
     </AuthWrapper>
   );
 };
