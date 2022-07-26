@@ -101,11 +101,11 @@ const Register = () => {
   }
 
   return (
-    <div className='h-[91.8vh] flex flex-col sm:flex-row'>
-      <div className='flex-1 hidden sm:block bg-blue-500'>
+    <div className='h-full flex flex-col sm:flex-row'>
+      <div className='flex-[2] hidden sm:block bg-blue-500'>
 
       </div>
-      <div className='flex-1 px-10'>
+      <div className='flex-[3] px-10'>
         <div className='max-w-lg flex-1 mx-auto rounded-lg px-10 py-8 bg-blue-100 mt-28 shadow-md'>
           <h1 className='mb-4 text-2xl'>Register</h1>
           <form onSubmit={handleRegister} className='flex flex-col gap-4'>

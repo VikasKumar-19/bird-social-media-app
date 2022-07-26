@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthWrapper";
 
 const Navbar = () => {
-  const activeClassName: string = " border-b-4 border-b-blue-600";
+  const activeClassName: string = " border-b-4 border-b-white";
 
-  const { user } = useContext(AuthContext);
+  const { user, handleLogout } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   return (
-    <nav className="w-64 h-screen bg-white shadow-md text-lg">
-      <ul className="flex flex-col gap-5 px-4">
+    <nav className="w-64 h-screen bg-indigo-900  shadow-2xl text-lg text-white">
+      <ul className="flex flex-col gap-5 px-10 py-32">
         <li className="py-2 px-2">
           <NavLink
             to="/"
@@ -42,6 +43,13 @@ const Navbar = () => {
               >
                 Profile
               </NavLink>
+            </li>
+            <li className="py-2 px-2">
+              <div className="cursor-pointer" onClick={()=>{handleLogout?.(); navigate("/", {replace: true})}}>
+                <span>
+                  Logout
+                </span>
+              </div>
             </li>
           </>
         ) : (
