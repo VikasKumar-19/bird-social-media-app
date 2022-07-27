@@ -7,6 +7,7 @@ import Navbar from "./layout/navbar";
 import Dashboard from "./pages/dashboard";
 import LandingPage from "./pages/landiing-page";
 import Login from "./pages/login-page";
+import Profile from "./pages/Profile";
 import Register from "./pages/register-page";
 import VikasTest from "./pages/vikas-test";
 import PrivateRoute from "./privateRoute";
@@ -26,6 +27,14 @@ const Routings = () => {
                 element={
                   <PrivateRoute>
                     <Dashboard />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <PrivateRoute>
+                    <Profile />
                   </PrivateRoute>
                 }
               />
